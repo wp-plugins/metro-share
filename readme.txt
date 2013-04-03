@@ -17,10 +17,10 @@ Simply install, activate and visit the "Sharing icons" settings page.
 
 By default, the plugin displays the sharing icons via the_content(), however
 you may wish to display it elsewhere. If this is the case, please install
-the "Metro Share Remover" plugin and add the code <code><?php do_action( 'metroshare' ); ?></code>
+the "<a href="http://geek.ryanhellyer.net/products/metro-share-remover/">Metro Share Remover</a>" plugin and add the code <code><?php do_action( 'metroshare' ); ?></code>
 wherever you wish to display the sharing icons.
 
-The plugin is provided with CSS by default, but you can unhook this and add your own. For an example of this, check out the "Metro Share Styles" plugin.
+The plugin is provided with CSS by default, but you can unhook this and add your own. For an example of this, check out the "<a href="http://geek.ryanhellyer.net/products/metro-share-styles/">Metro Share Styles</a>" plugin.
 
 == Frequently Asked Questions ==
 
