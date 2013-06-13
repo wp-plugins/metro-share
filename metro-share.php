@@ -3,7 +3,7 @@
 Plugin Name: Metro Share
 Plugin URI: http://metronet.no
 Description: Super fast and super customizable social sharing
-Version: 0.5.2
+Version: 0.5.3
 Author: Metronet AS
 Author URI: http://metronet.no
 Text Domain: metroshare
@@ -374,13 +374,14 @@ class Metro_Share {
 
 		// Generate final HTML and add it to the main post content
 		if ( ! empty( $items ) ) {
+			$prefix = apply_filters( 'metro-share-prefix', $this->settings['prefix'] ); // Adding filter to allow users to edit the prefix text - useful for doing translations or changing the text based on which page you are on
 			$share_html = sprintf( 
 					'<div class="metroshare">
 						<h4 class="share-prefix">%s</h4>
 						<ul class="metro-tabs">%s</ul>
 						%s
 					</div>',
-					esc_html( $this->settings['prefix'] ),
+					esc_html( $prefix ),
 					implode( '', $tabs ),
 					implode( '', $items ) 
 				);
