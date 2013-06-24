@@ -314,7 +314,7 @@ class Metro_Share {
 	public function get_sharing_icons() {
 		$items = array();
 		$tabs = array();
-
+		$post_id = get_the_ID();
 		// Process each potential sharing destination
 		foreach ( $this->settings['destinations'] as $d => $destination ) {
 
@@ -329,7 +329,7 @@ class Metro_Share {
 				$replace = array(
 					'{{title}}'      => get_the_title(),
 					'{{post_title}}' => get_the_title(),
-					'{{link}}'       => get_permalink(),
+					'{{link}}'       => get_permalink( $post_id ),
 					'{{shortlink}}'  => wp_get_shortlink(),
 				);
 			}
@@ -347,43 +347,32 @@ class Metro_Share {
 			if ( isset( $this->destinations[ $d ]['hidden'] ) )
 				foreach ( $this->destinations[ $d ]['hidden'] as $field_name => $field_value ) {
 					if ( ! empty( $field_value ) )
-						$hidden_fields[] = sprintf( '<input type="hidden" name="%s" value="%s" />', $field_name, strtr( $field_value, $replace ) );
+						$hidden_fields[ $field_name ] = urlencode( strtr( $field_value, $replace ) );
 				}
 
 			// If sharing destination is enabled, then display list item and link
-			if ( isset( $destination['enabled'] ) )
-				$tabs[] = sprintf( 
-						'<li class="metroshare-%s"><a href="#destination-%s"><span class="icon"></span>%s</a></li>',  
+			if ( isset( $destination['enabled'] ) ) {
+				$href = add_query_arg( $hidden_fields, $this->destinations[ $d ]['action'] );
+				$tabs[] = sprintf(
+						'<li class="metroshare-%s"><a rel="nofollow" href="%s"><span class="icon"></span>%s</a></li>',  
 						$d,
-						$d,
+						$href,
 						esc_html( $this->destinations[ $d ]['title'] )
 					);
-
-			// If sharing destination is enabled, then display form
-			if ( isset( $destination['enabled'] ) ) {
-				$items[] = sprintf( 
-						'<form id="destination-%s" class="destination-tab" action="%s" method="get">
-							%s
-						</form>',
-						$d,
-						$this->destinations[ $d ]['action'],
-						implode( '', $hidden_fields )
-					);
 			}
+
 		}
 
 		// Generate final HTML and add it to the main post content
-		if ( ! empty( $items ) ) {
+		if ( ! empty( $tabs ) ) {
 			$prefix = apply_filters( 'metro-share-prefix', $this->settings['prefix'] ); // Adding filter to allow users to edit the prefix text - useful for doing translations or changing the text based on which page you are on
 			$share_html = sprintf( 
 					'<div class="metroshare">
 						<h4 class="share-prefix">%s</h4>
 						<ul class="metro-tabs">%s</ul>
-						%s
 					</div>',
 					esc_html( $prefix ),
-					implode( '', $tabs ),
-					implode( '', $items ) 
+					implode( '', $tabs )
 				);
 			return $share_html;
 		}

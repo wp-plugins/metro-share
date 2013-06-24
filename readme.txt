@@ -1,9 +1,9 @@
 === Metro Share ===
-Contributors: kasparsd, ryanhellyer, metronet
+Contributors: kasparsd, ryanhellyer, metronet, ronalfy
 Donate link: http://konstruktors.com/
 Tags: share, icons, metronet, sharing
 Requires at least: 3.5
-Stable tag: 0.5.3
+Stable tag: 0.5.4
 
 Super fast and super customizable social sharing
 
@@ -34,6 +34,10 @@ The plugin is provided with CSS by default, but you can unhook this and add your
 * A. This plugin is intended for use by developers. The plugin is intended to be as extensible. Most changes you might like to make can be achieved via a few lines in a short custom plugin (or in your theme).
 
 == Changelog ==
+
+= 0.5.4 (24/6/2013) =
+* Removed redundant form elements and changed to URL with query vars
+* Plugin now works correctly when used multiple times on the same page
 
 = 0.5.3 (13/6/2013) =
 * Added filter for allow users to modify the prefix text. Useful for translations or if you need different text depending on the page.
