@@ -137,6 +137,12 @@ class Metro_Share {
 	 * @author Ryan Hellyer <ryan@metronet.no>
 	 */
 	public function sanitise_chunk( $input ) {
+
+		// Strip @ characters from Twitter handles
+		if ( 'twitter' == $input['enabled'] ) {
+			$input['username'] = str_replace( '@', '', $input['username'] );
+		}
+
 		$output = array();
 		if ( ! empty( $input['enabled'] ) )
 			$output['enabled']  = sanitize_title( $input['enabled'] );

@@ -1,9 +1,9 @@
 === Metro Share ===
 Contributors: kasparsd, ryanhellyer, metronet, ronalfy
-Donate link: http://konstruktors.com/
+Donate link: http://www.metronet.no/
 Tags: share, icons, metronet, sharing
-Requires at least: 3.5
-Stable tag: 0.5.4
+Requires at least: 3.6
+Stable tag: 0.5.5
 
 Super fast and super customizable social sharing
 
@@ -34,6 +34,9 @@ The plugin is provided with CSS by default, but you can unhook this and add your
 * A. This plugin is intended for use by developers. The plugin is intended to be as extensible. Most changes you might like to make can be achieved via a few lines in a short custom plugin (or in your theme).
 
 == Changelog ==
+
+= 0.5.5 (15/8/2013) =
+* Setup better UX for entering Twitter handles - now removes @ characters automatically
 
 = 0.5.4 (24/6/2013) =
 * Removed redundant form elements and changed to URL with query vars
