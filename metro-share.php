@@ -3,7 +3,7 @@
 Plugin Name: Metro Share
 Plugin URI: http://metronet.no
 Description: Super fast and super customizable social sharing
-Version: 0.5.3
+Version: 0.5.6
 Author: Metronet AS
 Author URI: http://metronet.no
 Text Domain: metroshare
@@ -360,7 +360,7 @@ class Metro_Share {
 			if ( isset( $destination['enabled'] ) ) {
 				$href = add_query_arg( $hidden_fields, $this->destinations[ $d ]['action'] );
 				$tabs[] = sprintf(
-						'<li class="metroshare-%s"><a rel="nofollow" href="%s"><span class="icon"></span>%s</a></li>',  
+						apply_filters( 'metro-share-item', '<li class="metroshare-%s"><a rel="nofollow" href="%s"><span class="icon"></span>%s</a></li>' ),  
 						$d,
 						$href,
 						esc_html( $this->destinations[ $d ]['title'] )
