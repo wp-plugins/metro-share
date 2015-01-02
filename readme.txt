@@ -3,13 +3,19 @@ Contributors: kasparsd, ryanhellyer, metronet, ronalfy
 Donate link: http://www.metronet.no/
 Tags: share, icons, metronet, sharing
 Requires at least: 3.6
-Stable tag: 0.5.6
+Stable tag: 0.5.7
 
 Super fast and super customizable social sharing
 
 == Description ==
 
 Super fast and super customizable social sharing. Adds Facebook, Twitter, Google+, LinkedIn and Email icons to your posts and pages.
+
+= Extension plugins =
+* <a href="http://soderlind.no/metro-share-social-fonts/">Metro Share Social Fonts</a>
+* <a href="https://geek.hellyer.kiwi/plugins/metro-share-remover/">Metro Share Remover</a>
+* <a href="https://geek.hellyer.kiwi/2013/04/03/metro-share-styles/">Metro Share Styles</a>
+
 
 == Installation ==
 
@@ -34,6 +40,11 @@ The plugin is provided with CSS by default, but you can unhook this and add your
 * A. This plugin is intended for use by developers. The plugin is intended to be as extensible. Most changes you might like to make can be achieved via a few lines in a short custom plugin (or in your theme).
 
 == Changelog ==
+
+= 0.5.7 (2/1/2015) =
+* Added documentation for extension plugins
+* Matching transation slug to new WordPress.org requirements
+* Matching indentation and brace coding to new WordPress coding standards
 
 = 0.5.6 (26/8/2013) =
 * Added filter to allow for addition of Google Analytics event tracking code
