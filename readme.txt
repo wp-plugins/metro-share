@@ -3,7 +3,7 @@ Contributors: kasparsd, ryanhellyer, metronet, ronalfy
 Donate link: http://www.metronet.no/
 Tags: share, icons, metronet, sharing
 Requires at least: 3.6
-Stable tag: 0.5.7
+Stable tag: 0.5.8
 
 Super fast and super customizable social sharing
 
@@ -40,6 +40,9 @@ The plugin is provided with CSS by default, but you can unhook this and add your
 * A. This plugin is intended for use by developers. The plugin is intended to be as extensible. Most changes you might like to make can be achieved via a few lines in a short custom plugin (or in your theme).
 
 == Changelog ==
+
+= 0.5.8 (4/1/2015) =
+* Fixed critical bug affecting people using do_action( 'metroshare' )
 
 = 0.5.7 (2/1/2015) =
 * Added documentation for extension plugins

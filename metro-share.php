@@ -3,7 +3,7 @@
 Plugin Name: Metro Share
 Plugin URI: http://metronet.no
 Description: Super fast and super customizable social sharing
-Version: 0.5.7
+Version: 0.5.8
 Author: Metronet AS
 Author URI: http://metronet.no
 Text Domain: metro-share
@@ -68,7 +68,7 @@ class Metro_Share {
 
 		// Frontend
 		add_action( 'wp_enqueue_scripts',    array( $this, 'enqueue_frontend_scripts' ) );
-		add_action( 'metro-share',            array( $this, 'show_sharing_icons' ) );
+		add_action( 'metroshare',            array( $this, 'show_sharing_icons' ) );
 		add_action( 'wp_footer',             array( $this, 'maybe_close_facebook_redirect' ) );
 		add_action( 'the_content',           array( $this, 'show_the_content' ) );
 	}
